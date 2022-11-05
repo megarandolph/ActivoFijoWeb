@@ -1,0 +1,16 @@
+<button (click)="CreateMode()" class="btn btn-outline-primary m-1" type="" data-toggle="modal" [attr.data-target]="'#modalForm'">Crear nuevo</button>
+
+<app-tabla [body]="empleados"
+[headers]="[
+'#',
+'nombre',
+'cedula',
+'departamentoId',
+'tipoPersonaId',
+'fechaIngreso',
+'estado',
+'Acciones'
+]" (OnDelete)="delete($event)" (OnView)="getEmpleadosById($event,2)" (OnEdit)="getEmpleadosById($event,3)"></app-tabla>
+
+<!-- Modal -->
+<app-add-empleado (onSave)="getEmpleados()"></app-add-empleado>
