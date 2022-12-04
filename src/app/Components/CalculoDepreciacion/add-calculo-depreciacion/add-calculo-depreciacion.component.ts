@@ -8,6 +8,7 @@ import { DatePipe, NgFor } from '@angular/common';
 import { FormControl, FormGroup } from '@angular/forms';
 import { CuentasService } from 'src/app/Services/cuentas.service';
 import { Cuenta } from 'src/app/model/Cuentas';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-add-calculo-depreciacion',
   templateUrl: './add-calculo-depreciacion.component.html',
@@ -26,9 +27,10 @@ export class AddCalculoDepreciacionComponent implements OnInit {
   public form: FormGroup = new FormGroup({
     calculoDepreciacionId : new FormControl(0),
     añoProceso : new FormControl(0),
-    mesProceso : new FormControl(0),
+    añosVida : new FormControl(0),
     fechaProceso : new FormControl(null),
-    montoDepreciado : new FormControl(0),
+    montoDepreciadoAnual : new FormControl(0),
+    depreciacionAcumulada : new FormControl(0),
     cuentaCompra : new FormControl(0),
     cuentaDepreciacion : new FormControl(0),
     activoFijoId : new FormControl(0)
@@ -93,7 +95,13 @@ export class AddCalculoDepreciacionComponent implements OnInit {
           this.closebutton.nativeElement.click();
         } else {
 
+          this.closebutton.nativeElement.click();
           res.errors.forEach((element: any) => {
+            Swal.fire({
+              icon: 'error',
+              title: 'Ha ocurrido un error',
+              text: element
+            })
             console.log(element);
           });
         }

@@ -1,0 +1,68 @@
+
+<div class="container d-flex justify-content-center">
+    
+      <form [formGroup]="form" class="row" (ngSubmit)="getDepreciacion()">
+        <div class="title col-12">Consulta Depreciacion</div>
+        
+        <div class="input-container ic1 col-3">
+          <input id="RangoInicial" formControlName="RangoInicial" name="RangoInicial" class="input" type="number" />
+          <div class="cut text-center">Rango Inicial</div>
+        </div>
+        <div class="input-container ic1 col-3">
+            <input id="RangoFinal" formControlName="RangoFinal" name="RangoFinal" class="input" type="number" />
+            <div class="cut text-center">Rango Final</div>
+        </div>
+        <div class="input-container ic1 col-3">
+            <input id="FechaInicial" formControlName="FechaInicial" name="FechaInicial" class="input" type="date" />
+            <div class="cut text-center">Fecha Inicial</div>
+        </div>
+        <div class="input-container ic1 col-3">
+            <input id="FechaFinal" formControlName="FechaFinal" name="FechaFinal" class="input" type="date" />
+            <div class="cut text-center">Fecha Final</div>
+        </div>
+        <div class="input-container ic1 col-3">
+          <select class="input" id="TipoActivo" formControlName="TipoActivo" name="TipoActivo">
+            <option *ngFor="let tipo of TipoActivos" [value]="tipo.descripcion">{{tipo.descripcion}}
+            </option>
+          </select>
+          <div class="cut text-center">Tipo Activo</div>
+        </div>
+       
+        <div class="input-container ic1 col-3">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="type" id="Type1" formControlName="Type" value="1"
+            />
+            <label class="form-check-label" for="Type1">Rango depreciacion</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="type" id="Type2" formControlName="Type" value="2"
+            />
+            <label class="form-check-label" for="Type2">Rango de fechas</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="type" id="type3" formControlName="Type" value="3"
+            />
+            <label class="form-check-label" for="type3">Tipo de activo</label>
+          </div>
+          <div class="cut text-center">Seleccione opcion de filtrado</div>
+        </div>
+
+        <button type="submit" class="submit">Guardar</button>
+        <button type="button" class="btn btn-warning limpiar" (click)="Clear()">Limpiar</button>
+      </form>
+    </div>
+       
+      <app-tabla [body]="depreciacions" [headers]="[
+      'Activo',
+      'Tipo Activo',
+      'Cuenta Compra',
+      'Cuenta Depreciacion',
+      'Valor de Compra',
+      'Año proceso',
+      'Monto depreciacion anual',
+      'Depreciacion acumulada',
+      'Años de vida',
+      'Fecha de proceso'
+      ]" 
+      [hide]="true"></app-tabla>
+      

@@ -4,15 +4,17 @@
 
 <app-tabla [body]="depreciacions" [headers]="[
 '#',
-'añoProceso',
-'mesProceso',
-'activoFijoId',
-'fechaProceso',
-'montoDepreciado',
-'cuentaCompra',
-'cuentaDepreciacion',
-'Acciones'
-]" (OnDelete)="delete($event)" (OnView)="getDepreciacionByid($event,2)" (OnEdit)="getDepreciacionByid($event,3)"></app-tabla>
+'AñoProceso',
+'ActivoFijoId',
+'FechaProceso',
+'Monto depreciacion anual',
+'Depreciacion acumulada',
+'Cuenta compra',
+'Cuenta depreciacion',
+'Años de vida'
+]" [hide]="true"
+(OnDelete)="delete($event)" (OnView)="getDepreciacionByid($event,2)" (OnEdit)="getDepreciacionByid($event,3)"
+></app-tabla>
 
 <!-- Modal -->
 <app-add-calculo-depreciacion (onSave)="getDepreciacion()"></app-add-calculo-depreciacion>

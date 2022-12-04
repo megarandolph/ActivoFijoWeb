@@ -21,6 +21,7 @@ import { ViewTipoActivosComponent } from './Components/TipoActivos/view-tipo-act
 import { AddTipoActivosComponent } from './Components/TipoActivos/add-tipo-activos/add-tipo-activos.component';
 import { ViewTiposPersonasComponent } from './Components/TipoPersonas/view-tipos-personas/view-tipos-personas.component';
 import { AddTiposPersonasComponent } from './Components/TipoPersonas/add-tipos-personas/add-tipos-personas.component';
+import { ViewConsultaDepreciacionComponent } from './Components/ConsultaDepreciacion/view-consulta-depreciacion/view-consulta-depreciacion.component';
 
 
 
@@ -42,6 +43,7 @@ import { AddTiposPersonasComponent } from './Components/TipoPersonas/add-tipos-p
     AddTipoActivosComponent,
     ViewTiposPersonasComponent,
     AddTiposPersonasComponent,
+    ViewConsultaDepreciacionComponent,
   ],
   imports: [
     BrowserModule,

@@ -10,13 +10,13 @@
           <div class="form">
             <form [formGroup]="form" class="row" (ngSubmit)="onSubmit()">
               <div class="title col-12">Calculo Depreciacion</div>
-              <div class="input-container ic1 col-6">
+              <!-- <div class="input-container ic1 col-6">
                 <input id="añoProceso" formControlName="añoProceso" name="añoProceso" class="input" type="number" />
                 <div class="cut text-center">Año Proceso</div>
-              </div>
+              </div> -->
               <div class="input-container ic1 col-6">
-                <input id="mesProceso" formControlName="mesProceso" name="mesProceso" class="input" type="number" />
-                <div class="cut text-center">Mes Proceso</div>
+                <input id="añosVida" formControlName="añosVida" name="añosVida" class="input" type="number" />
+                <div class="cut text-center">Años de vida</div>
               </div>
               <div class="input-container ic1 col-6">
                 <select class="input" id="activoFijoId" formControlName="activoFijoId" name="activoFijoId">
@@ -25,7 +25,7 @@
                 </select>
                 <div class="cut text-center">Activo fijo</div>
               </div>
-              <div class="input-container ic1 col-6">
+             <!--  <div class="input-container ic1 col-6">
                 <input id="fechaProceso" class="input" type="date" placeholder="" formControlName="fechaProceso"
                   name="fechaProceso" />
                 <div class="cut text-center">Fecha Proceso</div>
@@ -47,7 +47,7 @@
                     <option *ngFor="let cuenta of Cuentas" [value]="cuenta.cuentaId">{{cuenta.descripcion}}</option>                    
                 </select>
                 <div class="cut text-center">Depreciacion</div>
-              </div>
+              </div> -->
               <button type="submit" class="submit" *ngIf="this.inView === false">Guardar</button>
             </form>
           </div>

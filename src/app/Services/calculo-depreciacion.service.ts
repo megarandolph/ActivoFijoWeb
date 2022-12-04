@@ -19,6 +19,12 @@ export class CalculoDepreciacionService {
     return this._http.get(this.url + '/CalculoDepreciacion',{ headers: headers });
   }
 
+  getCalculoDepreciacionConsulta(RangoInicial:number,RangoFinal:number,FechaInicial:any,FechaFinal:any,TipoActivo:string,Type:number): Observable<any> {
+    let headers = new HttpHeaders()
+      .set('Content-Type', 'application/json')
+    return this._http.get(this.url + `/CalculoDepreciacion/GETConsulta?RangoInicial=${RangoInicial}&RangoFinal=${RangoFinal}&FechaInicial=${FechaInicial}&FechaFinal=${FechaFinal}&TipoActivo=${TipoActivo}&type=${Type}`,{ headers: headers });
+  }
+
   addCalculoDepreciacion(calculoDepreciacion: any): Observable<any> {
     let params = JSON.stringify(calculoDepreciacion);
     let headers = new HttpHeaders()

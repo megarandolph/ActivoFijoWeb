@@ -9,6 +9,7 @@ import { faTrash, faPenToSquare,faEye } from '@fortawesome/free-solid-svg-icons'
 export class TablaComponent implements OnInit,OnChanges {
   @Input() public headers: string[];  
   @Input() public body: any[];  
+  @Input() public hide: boolean;  
   names:any[];
   faTrash = faTrash 
   faPenToSquare = faPenToSquare
