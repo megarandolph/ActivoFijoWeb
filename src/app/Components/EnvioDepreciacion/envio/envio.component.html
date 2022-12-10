@@ -1,0 +1,24 @@
+
+
+<div class="container mt-3 row justify-content-between">
+    <h3>Envio de depreciacion anual</h3>
+    
+    <button class="btn btn-lg btn-primary" (click)="getEnvio()">
+        Enviar
+    </button>
+    
+    <app-tabla [body]="depreciacions" [headers]="[
+    'Activo',
+    'Tipo Activo',
+    'Cuenta Compra',
+    'Cuenta Depreciacion',
+    'Valor de Compra',
+    'Año proceso',
+    'Monto depreciacion anual',
+    'Depreciacion acumulada',
+    'Años de vida',
+    'Fecha de proceso',
+    'Estado'
+    ]" 
+    [hide]="true"></app-tabla>
+    

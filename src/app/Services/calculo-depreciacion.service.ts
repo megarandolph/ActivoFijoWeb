@@ -25,6 +25,18 @@ export class CalculoDepreciacionService {
     return this._http.get(this.url + `/CalculoDepreciacion/GETConsulta?RangoInicial=${RangoInicial}&RangoFinal=${RangoFinal}&FechaInicial=${FechaInicial}&FechaFinal=${FechaFinal}&TipoActivo=${TipoActivo}&type=${Type}`,{ headers: headers });
   }
 
+  getCalculoDepreciacion2(): Observable<any> {
+    let headers = new HttpHeaders()
+      .set('Content-Type', 'application/json')
+    return this._http.get(this.url + '/CalculoDepreciacion/GETConsulta2',{ headers: headers });
+  }
+
+  getEnvioDepreciacion(): Observable<any> {
+    let headers = new HttpHeaders()
+      .set('Content-Type', 'application/json')
+    return this._http.get(this.url + '/CalculoDepreciacion/EnvioDepreciacion',{ headers: headers });
+  }
+
   addCalculoDepreciacion(calculoDepreciacion: any): Observable<any> {
     let params = JSON.stringify(calculoDepreciacion);
     let headers = new HttpHeaders()
@@ -43,5 +55,16 @@ export class CalculoDepreciacionService {
     let headers = new HttpHeaders()
       .set('Content-Type', 'application/json')
     return this._http.delete(this.url + '/CalculoDepreciacion?CalculoDepreciacionId='+calculoDepreciacionId, {headers: headers});
+  }
+
+  EnviarDepreciacion(Envio: any): Observable<any> {
+    
+    let headers = new HttpHeaders()
+      .set('Content-Type', 'application/json')
+    return this._http.post('https://webapi220221209170127contabilidad.azurewebsites.net/api/EntradaContable', Envio, { headers: headers });
+  }
+
+  UpdateAll(): Observable<any> {
+    return this._http.put(this.url + '/CalculoDepreciacion/UPDATEEstado', '');
   }
 }

@@ -10,6 +10,7 @@ import { ViewDepartamentosComponent } from './Components/Departamentos/view-depa
 import { ViewTipoActivosComponent } from './Components/TipoActivos/view-tipo-activos/view-tipo-activos.component';
 import { ViewTiposPersonasComponent } from './Components/TipoPersonas/view-tipos-personas/view-tipos-personas.component';
 import { ViewConsultaDepreciacionComponent } from './Components/ConsultaDepreciacion/view-consulta-depreciacion/view-consulta-depreciacion.component';
+import { EnvioComponent } from './Components/EnvioDepreciacion/envio/envio.component';
 
 const routes: Routes = [
   {path: 'activos', component: ActivosComponent},
@@ -19,7 +20,9 @@ const routes: Routes = [
   {path: 'Departamentos', component: ViewDepartamentosComponent},
   {path: 'TipoActivos', component: ViewTipoActivosComponent},
   {path: 'TipoPersonas', component: ViewTiposPersonasComponent},
-  {path: 'ConsultaDepreciacion', component: ViewConsultaDepreciacionComponent}
+  {path: 'ConsultaDepreciacion', component: ViewConsultaDepreciacionComponent},
+  {path: 'Envio', component: EnvioComponent}
+
 
 
 ];
